@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Notizen</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/note.png">
+
+    <script src="script.js">
+
+    </script>
+
+</head>
+
+<!-- function init() is to add note with enter -->
+<body onload="showNotes(), init()">
+
+
+    <div class="header">
+        <div class="header-logo">
+            <img src="img/note-128.png">
+            <div class="header-logo-name">Felis-Notizen</div>
+        </div>
+    </div>
+
+    <hr class="hyphen">
+
+    <!-- <div class="container-body">
+
+        <div class="container-navi  hide-mobile">
+            <div class="navi-left">
+                <div><img src="img/note-black-64.png"></div>
+                <nav>
+
+                    <div class="nav-text">Notizen</div>
+                </nav>
+            </div>
+        </div> -->
+
+
+
+    <div class="note-container">
+        <div class="note-input-container">
+            <textarea id="note" class="note-input" type="text" placeholder="Notiz schreiben..."></textarea>
+            <div class="note-btn-container">
+                <button class="create-btn" onclick="addNote()" href="#">Erstellen</button>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="container-notes">
+
+        <div class="container-added-notes" id="myNotes">
+
+
+            <!-- Hier werden die Notizen angezeigt -->
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
