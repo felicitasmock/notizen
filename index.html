@@ -19,6 +19,7 @@
 </head>
 
 <!-- function init() is to add note with enter -->
+
 <body onload="showNotes(), init()">
 
 
@@ -31,29 +32,29 @@
 
     <hr class="hyphen">
 
-    <!-- <div class="container-body">
+    <div class="container-body">
 
         <div class="container-navi  hide-mobile">
-            <div class="navi-left">
-                <div><img src="img/note-black-64.png"></div>
-                <nav>
+            <nav class="nav-text">
+                <div class="navi-left"><img src="img/note-black-64.png">
+                    Notizen</div>
+                <div class="navi-left"><img src="img/trash.png">
+                    Papierkorb</div>
 
-                    <div class="nav-text">Notizen</div>
-                </nav>
-            </div>
-        </div> -->
+            </nav>
+        </div>
 
 
 
-    <div class="note-container">
-        <div class="note-input-container">
-            <textarea id="note" class="note-input" type="text" placeholder="Notiz schreiben..."></textarea>
-            <div class="note-btn-container">
-                <button class="create-btn" onclick="addNote()" href="#">Erstellen</button>
+        <div class="note-container">
+            <div class="note-input-container">
+                <textarea id="note" class="note-input" type="text" placeholder="Notiz schreiben..."></textarea>
+                <div class="note-btn-container">
+                    <button class="create-btn" onclick="addNote()" href="#">Erstellen</button>
 
+                </div>
             </div>
         </div>
-    </div>
 
     </div>
 
