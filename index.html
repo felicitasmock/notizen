@@ -20,7 +20,7 @@
 
 <!-- function init() is to add note with enter -->
 
-<body onload="showNotes(), init()">
+<body onload="showNotes()">
 
 
     <div class="header">
@@ -36,9 +36,9 @@
 
         <div class="container-navi  hide-mobile">
             <nav class="nav-text">
-                <div class="navi-left"><img src="img/note-black-64.png">
+                <div onclick="openNotes()" class="navi-left"><img src="img/note-black-64.png">
                     Notizen</div>
-                <div class="navi-left"><img src="img/trash.png">
+                <div onclick="openTrash()" class="navi-left"><img src="img/trash.png">
                     Papierkorb</div>
 
             </nav>
@@ -47,7 +47,7 @@
 
 
         <div class="note-container">
-            <div class="note-input-container">
+            <div id="noteInput" class="note-input-container">
                 <textarea id="note" class="note-input" type="text" placeholder="Notiz schreiben..."></textarea>
                 <div class="note-btn-container">
                     <button class="create-btn" onclick="addNote()" href="#">Erstellen</button>
@@ -62,9 +62,12 @@
 
         <div class="container-added-notes" id="myNotes">
 
-
             <!-- Hier werden die Notizen angezeigt -->
+        </div>
+        <div class="container-added-notes" id="myTrash">
 
+
+            <!-- Hier werden die gelöschten Notizen angezeigt -->
         </div>
 
     </div>
