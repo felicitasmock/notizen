@@ -18,27 +18,33 @@
 
 </head>
 
-<!-- function init() is to add note with enter -->
 
 <body onload="showNotes()">
 
 
     <div class="header">
-        <div class="header-logo">
-            <img src="img/note-128.png">
-            <div class="header-logo-name">Felis-Notizen</div>
-        </div>
+
+        <img class="header-logo" src="img/note-128.png">
+        <div class="header-logo-name">Felis-Notizen</div>
+        <img class="menu-icon hide" onclick="openMobileMenu()" src="img/menu-4-64.png">
+
     </div>
 
     <hr class="hyphen">
 
+    <div id="mobileMenu"></div>
+    <div class="hide">
+        <span id="activeNavi" class="active-navi-mobile">Notizen</span>
+    </div>
+
     <div class="container-body">
 
-        <div class="container-navi  hide-mobile">
+        <div id="menu" class="container-navi hide-mobile">
             <nav class="nav-text">
-                <div onclick="openNotes()" class="navi-left"><img src="img/note-black-64.png">
+                <div onclick="openNotes()" id="navNotes" class="navi-left navi-left-active"><img
+                        src="img/note-black-64.png">
                     Notizen</div>
-                <div onclick="openTrash()" class="navi-left"><img src="img/trash.png">
+                <div onclick="openTrash()" id="navTrash" class="navi-left"><img src="img/trash.png">
                     Papierkorb</div>
 
             </nav>

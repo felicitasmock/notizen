@@ -9,15 +9,10 @@ body {
 
 .header {
     display: flex;
-    padding: 10px;
+    padding: 15px;
 }
 
 .header-logo {
-    display: flex;
-   
-}
-
-.header-logo img {
     width: 80px;
     height: 80px;
 }
@@ -27,12 +22,6 @@ body {
     font-weight: bold;
     padding: 30px;
     color: gray;
-}
-
-.header-profil img {
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
 }
 
 .hyphen {
@@ -49,9 +38,11 @@ body {
 .container-navi {
     height: 100px;
 }
+
 .hide {
     display: none;
 }
+
 .navi-left {
     font-size: 1.5em;
     padding: 20px;
@@ -60,10 +51,17 @@ body {
     height: 80vh;
     display: flex;
     align-items: center;
-    background-color: #FEEFC3;
+    background-color: #c3e3fe;
     border-radius: 0 40px 40px 0;
     height: 20px;
     cursor: pointer;
+}
+.navi-left:hover{
+    background-color: #007eff;
+}
+
+.navi-left-active {
+    background-color: #007eff;
 }
 
 .navi-left img {
@@ -96,7 +94,7 @@ nav {
     height: 100px;
     padding: 10px;
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
 }
 
 .note-input-container:focus {
@@ -126,7 +124,6 @@ nav {
     padding: 10px;
     font-weight: bold;
     cursor: pointer;
-
 }
 
 .create-btn:hover {
@@ -152,7 +149,6 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   
 }
 
 .notes {
@@ -165,7 +161,6 @@ textarea {
     display: flex;
     flex-direction: column;
     align-self: center;
-    
 }
 
 .notes-btn-container {
@@ -192,25 +187,63 @@ textarea {
     outline: none;
 }
 
-/*for smartphones*/
-@media(max-width: 1000px) {
+.empty-trash {
+    font-size: 20px;
+}
 
+/*for smartphones*/
+
+@media(max-width: 1000px) {
     .hide-mobile {
         display: none;
     }
-
+    .hide {
+        display: unset;
+    }
+    .header {
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-logo-name {
+        text-align: center;
+    }
+    .menu-icon {
+        width: 50px;
+        height: 50px;
+        filter: invert(0.5);
+    }
     .note-container {
         width: 100vw;
     }
-
-    .note-input-container{
+    .note-input-container {
         width: 80vw;
     }
     .note-input {
         width: auto;
     }
-
     .notes {
         width: 80vw;
+    }
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+    }
+    .close-mobile-menu {
+        text-align: right;
+        padding: 20px;
+    }
+    .nav-text{
+        padding-right: 20px;
+    }
+    .active-navi-mobile{
+        width: 100%;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        padding-top: 10px;
     }
 }
