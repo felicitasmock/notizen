@@ -1,9 +1,18 @@
 
+
 let notes = [];
 let trash = [];
 
+async function init() {
+    setURL('http://felicitas-mock.developerakademie.com/smallest_backend_ever');
+    await downloadFromServer();
+    showNotes();
+}
+
 function showNotes() {
     document.getElementById('myNotes').innerHTML = ''; //Liste myNotes soll gelöscht werden, da sonst alle bestehenden noch ein mal angezeigt werden
+    //notes = JSON.parse(backend.getItem('notes')) || [];
+    //trash = JSON.parse(backend.getItem('trash')) || [];
     trash = getArray('trash');
     notes = getArray('notes'); //array aufrufen
 
@@ -34,9 +43,9 @@ function addNote() {
 }
 
 // show trash notes in trash
-function showTrash() {
+async function showTrash() {
     document.getElementById('myTrash').innerHTML = ''; //Liste myTrash soll gelöscht werden, da sonst alle bestehenden noch ein mal angezeigt werden
-    trash = getArray('trash');
+    trash = await getArray('trash');
     if (trash == '') {
         myTrash.innerHTML = `<span class="empty-trash">Der Papierkorb ist leer.</span>`;
     } else {
@@ -56,7 +65,7 @@ function showTrash() {
 // function delete note in trash array
 function deleteNote(position) {
     trash.splice(position, 1);
-    setArray('trash', trash); 
+    setArray('trash', trash);
     // aktualisiert local storage, da sonst die notiz noch dort drinsteht udn durch shownotes auch weiterhin angezeigt wird
     showTrash();
 }
@@ -95,18 +104,9 @@ function openNotes() {
     closeMobileMenu()
     showNotes();
 }
-// sets arry in local storage
-function setArray(key, array) {
-    localStorage.setItem(key, JSON.stringify(array));
-}
-
-function getArray(key) {
-    return JSON.parse(localStorage.getItem(key)) || [];
-    // gibt mir das was im local storage steht, ODER (||) gibt mir nichts ([])
-}
 
 //open mobile Menu
-function openMobileMenu(){
+function openMobileMenu() {
     //document.getElementById('mobileMenu').classList.remove('hide'); //show container
     let menu = document.getElementById('menu').innerHTML; // define variable for menu / nav
     // puts menu into mobileMenu
@@ -119,6 +119,16 @@ function openMobileMenu(){
 }
 
 // close mobile menu
-function closeMobileMenu(){
+function closeMobileMenu() {
     document.getElementById('mobileMenu').innerHTML = '';
+}
+
+// sets arry in local storage
+async function setArray(key, array) {
+    await backend.setItem(key, JSON.stringify(array));
+}
+
+function getArray(key) {
+    return JSON.parse(backend.getItem(key)) || [];
+    // gibt mir das was im local storage steht, ODER (||) gibt mir nichts ([])
 }
