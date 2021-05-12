@@ -56,7 +56,8 @@ function showTrash() {
 // function delete note in trash array
 function deleteNote(position) {
     trash.splice(position, 1);
-    setArray('trash', trash); // aktualisiert local storage, da sonst die notiz noch dort drinsteht udn durch shownotes auch weiterhin angezeigt wird
+    setArray('trash', trash); 
+    // aktualisiert local storage, da sonst die notiz noch dort drinsteht udn durch shownotes auch weiterhin angezeigt wird
     showTrash();
 }
 
